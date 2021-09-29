@@ -187,9 +187,7 @@ export class SurveyResultMongoRepository implements SaveSurveyResultRepository, 
       })
       .project({
         _id: 0,
-        surveyId: {
-          $toString: '$_id.surveyId'
-        },
+        surveyId: '$_id.surveyId',
         question: '$_id.question',
         date: '$_id.date',
         answers: '$answers'
